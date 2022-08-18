@@ -485,8 +485,7 @@ def delete_item():
                 is_deleted = products.delete_one({'id': int(itemid)})
                 if is_deleted:
                     message = 'Item deleted'
-                    totalcost = ""
-                    return render_template('admin.html', delete_message=message, className="message", totalcost=totalcost)
+                    return render_template('admin.html', delete_message=message, className="message")
                 else:
                     message = "Item does not exist!"
                     return render_template('admin.html', delete_message=message, className="error")
