@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <a href="/">
+        <div class="logo">
+            <h1>FoodApp</h1>
+            <h4>Fresh & Pure</h4>
+        </div>
+    </a>
+</div>
+<div class="orders">
+    <br>
+    <h2>My Orders</h2>
+    <h3 class="{{className}}">{{ message }}</h3>
+    <div class="grid_cols grid_4cols cart_bg cart_bg_header">
+        <div><b>Order Id</b></div>
+        <div><b>Order Date:</b></div>
+        <div><b>Paid Amount:</b></div>
+        <div><b>    </b></div>
+    </div>
+
+        {% for order in orderdetails %}
+        <div class="my_orders grid_cols grid_4cols cart_bg">
+            <div><p>{{order['orderid']}}</p></div>
+            <div><p>{{order['order-data']}}</p></div>
+            <div><p>{{order['paid_amount']}}</p></div>
+            <div>
+            <form method="POST" action="/order_details/{{order['orderid']}}">
+                <button class="aLink">Check Order</button>
+            </form>
+<!--                <a href="/order_details/{{order['orderid']}}" class="btn-group__item All"> Check Order </a> &nbsp;-->
+            </div>
+
+        </div>
+        {% endfor %}
+
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/style.css') }}">
+</head>
+<body>
+ <div class="header">
+     <a href="/">
+            <div class="logo">
+                <h1>FoodApp</h1>
+                <h4>Fresh & Pure</h4>
+            </div>
+        </a>
+</div>
+
+<div class="status">
+    <h1>{{message}} </h1>
+    <br><br>
+    <a href="/{{go_back_link}}" class="btn-group__item All"> {{go_back_text}} </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/style.css') }}">
+</head>
+<body>
+<div class="header">
+    <a href="/">
+        <div class="logo">
+            <h1>FoodApp</h1>
+            <h4>Fresh & Pure</h4>
+        </div>
+    </a>
+</div>
+
+<div class="admin signup account">
+    <br>
+    <h1>Manage Products</h1>
+    <div class="grid_cols grid_2Acols">
+        <div>
+            <h2 class="{{className}}">{{ insert_message }}</h2>
+            <form method="POST" action="/admin">
+                <label>Item id: </label>
+                <input type="text" maxlength="80" size="25" id="id" name="id" placeholder="Enter Unique Item Id"
+                       required/>
+                <br>
+
+                <label>Name: </label>
+                <input type="text" maxlength="80" size="25" id="name" name="name" placeholder="Enter Item Name"
+                       required/>
+
+                <br>
+                <label>Category: </label>
+                <input type="text" maxlength="80" size="25" id="category" name="category"
+                       placeholder="Category name as snacks/breakfast/lunch/dinner/evening" required/>
+                <!--         <select name="category" id="category" required>-->
+                <!--            <option value="breakfast">Breakfast</option>-->
+                <!--            <option value="lunch">Lunch </option>-->
+                <!--            <option value="snacks">Snacks</option>-->
+                <!--            <option value="dinner" selected >Dinner</option>-->
+                <!--            <option value="evening">Evening</option>-->
+                <!--        </select>-->
+                <br>
+                <label>Price: </label>
+                <input type="text" maxlength="80" size="25" id="price" name="price" placeholder="Enter Item Cost"
+                       required/>
+
+                <br>
+                <label>Description: </label>
+                <input type="text" maxlength="120" size="50" id="description" name="description"
+                       placeholder="Provide Description of Item" required/>
+
+                <br>
+                <label>Ratings: </label>
+                <input type="text" maxlength="80" size="25" id="ratings" name="ratings"
+                       placeholder="Enter Ratings according to food agency" required/>
+
+                <br>
+                <label>Image name: </label>
+                <input type="text" maxlength="80" size="25" id="image" name="image"
+                       placeholder="Enter image name as image.jpg"
+                       required/>
+
+                <br>
+                <button type="submit" class="btn-group__item All">Insert Item</button>
+                <!--        <a href="/delete_item" class="btn-group__item All">Delete Item</a>-->
+            </form>
+        </div>
+        <div>
+            <h2 class="{{className}}">{{ delete_message }}</h2>
+            <form method="POST" action="/delete_item">
+                <input type="text" maxlength="80" size="25" id="delete_id" name="id" placeholder="Enter Unique Item Id"
+                       required/>
+                <br>
+                <button type="submit" class="btn-group__item All admin_button">Delete Item</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

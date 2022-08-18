@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/style.css') }}">
+</head>
+<body>
+<div class="header">
+    <a href="/">
+        <div class="logo">
+            <h1>FoodApp</h1>
+            <h4>Fresh & Pure</h4>
+        </div>
+    </a>
+    <div class="top-nav">
+        <a class="button_link" href="/my_order"> Go back to Order List </a>
+    </div>
+</div>
+<div class="order_details">
+    <!--    <form method="POST" action="/payment">-->
+    <br>
+    <h2>Order Details</h2>
+    <h3 class="{{className}}">{{ message }} <span>{{ orderid }}</span></h3>
+    <div class="grid_cols grid_3cols cart_bg cart_bg_header">
+        <div><h3>Item</h3></div>
+        <div><h3>Quantity</h3></div>
+        <div><h3>Price</h3></div>
+    </div>
+
+    {% for item in orderdetails %}
+    <div class="grid_cols grid_3cols cart_bg">
+        <div class="cart_image">
+            <img src={{url_for('static',filename=item['image'])}}/>
+        </div>
+        <div class="cart_quantity">
+            <h3 id="qty">{{item['qty']}}</h3>
+        </div>
+        <div>
+            <div class="cart_cost">
+                <h3 id="price{{item['itemid']}}">{{item['totalprice']}}</h3>
+                <h3>₹</h3>
+            </div>
+        </div>
+        <div class="cart_title">
+            <h3>{{item['itemname']}}</h3>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+</body>
+</html>

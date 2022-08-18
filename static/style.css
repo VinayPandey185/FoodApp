@@ -1,0 +1,513 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "open sans", sans-serif;
+  }
+
+  html {
+    background: #faf7f2;
+    background-image: url('/static/builtin/background.jpg');
+    box-sizing: border-box;
+    font-family: "open sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  .subtle {
+    color: rgb(106, 112, 107);
+  }
+
+  .main-card--cointainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(300px, 300px));
+    grid-gap: 1px;
+    justify-content: space-around;
+  }
+
+.header{
+text-align: left;
+margin: 15px; /* margin: 0px 5px 5px 0px; */
+width: auto;
+height: 55px;
+font-size: 20px;
+position: relative;
+}
+
+.username {
+    text-transform: capitalize;
+    color: green !important;
+}
+
+.message {
+text-align: center;
+font-size: 18px;
+margin: 15px 5px 5px 5px;
+font-weight: bold;
+color: green;
+}
+
+.status, .status h1 {
+    text-align: center;
+    font-size: 21px;
+    margin: 50px 5px 5px 5px;
+    font-weight: bold;
+    color: #207e9b;
+}
+
+.order-item {
+    text-align: center
+}
+
+.admin h1{
+text-align: center;
+}
+
+
+.admin h2 {
+    margin: 30px 0px 0px 0px;
+    text-align: center;
+}
+
+.admin_button{
+    position: relative;
+    right: 0 !important;
+    color: black;
+    width: 193px;
+}
+
+
+.error {
+color: red;
+margin: 30px;
+text-align: center;
+position: relative;
+}
+
+.error h3{
+margin:40px;
+}
+
+.header h4{
+text-align: right;
+color: blue;
+}
+
+.header a{
+margin: 4px;
+}
+
+.logo{
+    width: 200px;
+    float: left;
+}
+
+.top-nav {
+float: right;
+font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+a:hover {
+    Text-decoration: underline;
+    cursor: pointer;
+}
+
+
+  .card-container {
+    margin: 25px auto 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .card-container img {
+    width: 100%;
+  }
+
+  .card {
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 0 5px rgba(75, 75, 75, 0.07);
+    z-index: 1;
+  }
+
+
+  .card-body {
+    display: inline-block;
+  }
+
+  .ratings {
+   margin-top: 0px;
+    color: green;
+  }
+
+  .ratings span{
+  color: #00ED12;
+  }
+
+  .card-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: #67c935;
+    color: white;
+    padding: 5px;
+    width: 95px;
+    text-align: right;
+    float: right;
+  }
+
+  .card-title {
+ font-family: "Cormorant GarArmond", serif;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 5px 5px;
+    text-transform: capitalize;
+  }
+
+  .card-description {
+    font-weight: 100;
+    line-height: 22px;
+    margin: 10px 0;
+    text-align: justify;
+    font-size: 13px;
+  }
+
+
+  .card-read:after {
+    background-color: #b8bddd;
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 9px;
+    width: 75%;
+  }
+
+  .card-tag {
+   background: none !important;
+    color: #00bcd4 !important;
+  }
+
+
+  .card-media {
+    max-width: 100%;
+    height: 200px
+  }
+
+  .card-shadow {
+    background-color: #fff;
+    box-shadow: 0 2px 25px 2px rgba(0, 0, 0, 1), 0 2px 50px 2px rgba(0, 0, 0, 1),
+    0 0 100px 3px rgba(0, 0, 0, 0.25);
+    height: 1px;
+    margin: -1px auto 0;
+    width: 80%;
+    z-index: -1;
+  }
+
+  @media (max-width: 998px) {
+    .main-card--cointainer {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(200px, 500px));
+      grid-gap: 50px;
+      justify-content: space-around;
+    }
+  }
+
+input, select {
+    width: 400px;
+    height: 64px;
+    font-size: 20px;
+    padding: 20px;
+    margin:20px;
+    height: 20px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+
+
+
+.login, .signup {
+    margin: auto;
+    width: 50%;
+}
+
+.login form, .signup form {
+    width: auto;
+    display: block;
+    text-align: center;
+}
+
+.signup input, select {
+height: 20px;
+margin: 5px;
+font-size: 14px;
+}
+
+h2 {
+    margin: 5px 5px 30px 5px;
+    text-align: center;
+}
+
+.account ::placeholder{
+    color: black;
+}
+
+.account label {
+    font-size: 18px;
+    padding: 10px;
+    font-weight: bold;
+    color: #2196f3;
+    width:200px;
+  display: inline-block;
+}
+
+.checkout label {
+   font-size: 14px;
+    padding: 10px;
+    color: #673ab7;
+    display: block;
+}
+
+.checkout span {
+    font-size: 16px;
+    color: green;
+    text-align: center;
+}
+
+.account input, select {
+font-size: 15px;
+}
+.account button, .account a {
+   position: relative;
+    right: -15%;
+    color: black;
+    width: 193px;
+}
+
+.account a {
+    color: red;
+}
+
+  .navbar {
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  .navbar h1 {
+    padding-bottom: 20px;
+    text-transform: capitalize;
+  }
+
+  /** button group styles **/
+
+ .navbar form, .top-nav form {
+  width: 200px;
+    display: contents;
+  }
+
+
+
+  button .All {
+  width: 200px;
+    display: contents;
+  }
+
+.button_link {
+    color: hsl(11deg 80% 45%);
+    background: none;
+    border: none;
+    font-weight: bold;
+}
+
+
+  .btn-group {
+    border-radius: 1rem;
+    text-transform: capitalize;
+  }
+  .btn-group__item {
+    border: none;
+    /* min-width: 6rem; */
+    padding: 1.5rem 3rem;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin: -1px;
+    font-size: 17px;
+    box-shadow: inset 0px 0px 0px -15px rebeccapurple;
+    transition: all 300ms ease-out;
+    text-transform: capitalize;
+  }
+
+  .btn-group__item:hover,
+  .btn-group__item:focus {
+    color: rebeccapurple;
+    box-shadow: inset 0px -20px 0px -15px rebeccapurple;
+  }
+  .btn-group__item:focus {
+    outline: none;
+  }
+  .btn-group__item:after {
+    content: "✔️";
+    margin-left: 0.5rem;
+    display: inline-block;
+    color: rebeccapurple;
+    position: absolute;
+    transform: translatey(10px);
+    opacity: 0;
+    transition: all 200ms ease-out;
+  }
+  .btn-group__item--active:after {
+    opacity: 1;
+    transform: translatey(-2px);
+  }
+
+  .card button {
+     border: 2px solid #00bcd4;
+    outline: 0;
+    padding: 9px;
+    color: white;
+    background-color: #00bcd4;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+}
+
+.grid_2Acols {
+     grid-template-columns: repeat(2, minmax(650px, 701px));
+     text-align: center;
+}
+
+
+.grid_2cols {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 200px));
+    grid-gap: 1px;
+    justify-content: space-around;
+}
+
+.grid_cols  {
+    display: grid;
+    grid-gap: 1px;
+    justify-content: space-around;
+    text-align: right;
+}
+
+
+
+.grid_3cols {
+     grid-template-columns: repeat(3, minmax(300px, 301px));
+}
+
+.grid_4cols {
+     grid-template-columns: repeat(4, minmax(300px, 301px));
+}
+
+.grid_4cols .title {
+    text-align: left;
+    line-height: 6;
+}
+
+.grid_cols .cart_title {
+    text-align: center;
+    color: #2196f3;
+    text-transform: capitalize;
+}
+
+.cart_bg_header {
+    border-bottom: 1px solid #ffeb3b;
+}
+
+.cart_bg {
+    text-align: center;
+    background: #cbba285e;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    padding: 20px;
+}
+
+.checkout_bg{
+    width: 50%;
+    left: 25%;
+}
+
+.my_orders:hover{
+    background-color: #9587145e;
+}
+
+.grid_cols .cart_image img{
+    text-align: right;
+    width: 65px;
+}
+
+.cart_quantity .qty_button{
+    width: 40px;
+    height: 35px;
+    float: left;
+    margin: 0px;
+    padding: 4px;
+    font-size: 14px
+}
+
+.price {
+    margin: 10px 5px;
+    text-align: center;
+    padding: 5px;
+    background: #ffeb00;
+    width: 65px;
+    border-radius: 50%;
+    height: 38px;
+    line-height: 26px
+}
+
+.total_cost h2 {
+    font-size: 20px;
+    color: green;
+    text-align: end;
+}
+
+footer {
+ text-align: center;
+    padding: 15px;
+    margin: 35px 0 0px 0px;
+    background-color: yellow;
+    color: green;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.aLink {
+    background: none;
+    border: none;
+    color: blue;
+}
+.aLink:hover {
+    Text-decoration: underline;
+    cursor: pointer;
+    color: blue
+}
+
+.cart_cost{
+    text-align: left;
+    padding: 7px;
+    display: inline-flex;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FoodApp</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/style.css') }}">
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <a href="/">
+            <div class="logo">
+                <h1>FoodApp</h1>
+                <h4>Fresh & Pure</h4>
+            </div>
+        </a>
+        <div class="top-nav">
+            <a class="button_link username" href="/account_details"> {{ username }}</a>
+            <a class="button_link" href="/signin"> {{ login }}</a>
+            <a class="button_link" href="/my_order"> {{ orders }}</a>
+            <a class="button_link" href="/signout"> {{ logout }}</a>
+            <a class="button_link" href="/add_to_cart"> {{ cart }} <span>🛒</span></a>
+            <a class="button_link" href="/admin"> {{ insertItem }} </a>
+
+        </div>
+    </div>
+
+    <!-- Nav Menu -->
+    <p class="{{className}}">{{ message }}</p>
+    <nav class="navbar" id="navbar">
+        <div class="btn-group">
+            {% for menu in foodMenu %}
+            <form method="POST" action="/{{ menu }}">
+                <button class="btn-group__item" type="submit">
+                    {{ menu }}
+                </button>
+            </form>
+            {% endfor %}
+
+            <form method="POST" action="/All">
+                <button class="btn-group__item All">All</button>
+            </form>
+
+        </div>
+    </nav>
+
+    <!-- Food Cards -->
+    <section class="main-card--cointainer">
+        {% for product in foodProducts %}
+        <div class="card-container">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title"> {{ product['name']}} </h2>
+                    <span class="card-label subtle"> {{ product['category']}}</span>
+                    <h3 class="ratings subtle">{{ product['ratings'] }} <span>★</span></h3>
+                    <img src={{url_for('static',filename=product['image'])}} alt="images" class="card-media"/>
+                    <span class="card-description subtle">{{ product['description']}}</span>
+                    <h3 class="price ">{{ product['price']}} ₹</h3>
+                    <div class="grid_2cols">
+                        <form method="POST" action="/add_to_cart">
+                            <input type="hidden" name="id" value="{{ product['id']}}">
+                            <button type="submit" class="btn-group__item"> Add to cart</button>
+                        </form>
+                        <form method="POST" action="/buynow">
+                            <input type="hidden" name="id" value="{{ product['id']}}">
+                            <input type="hidden" name="finalcost" value="{{ product['price']}}">
+                            <button type="submit" class="card-tag btn-group__item subtle"> Order Now</button>&nbsp;
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</div>
+</body>
+<footer>
+    <hr>
+    <h3 class="message"> Thank You for Visiting.</h3>
+    <h3>@FoodApp</h3>
+    <p>Contact us : +91-8892453436<br>
+  <a href="mailto:me.vinaykumarpandey@gmail.com">me.vinaykumarpandey@gmail.com</a></p>
+</footer>
+</html>

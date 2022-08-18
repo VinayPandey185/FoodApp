@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/style.css') }}">
+</head>
+<body>
+ <div class="message">
+        <p>{{ message }}</p>
+    </div>
+<div class="header">
+     <a href="/">
+            <div class="logo">
+                <h1>FoodApp</h1>
+                <h4>Fresh & Pure</h4>
+            </div>
+        </a>
+</div>
+
+<div class="error">
+    <form method="GET" action="/login_page">
+        <h3>Error Found: {{errorMessage}} </h3>
+        <button class="error btn-group__item All">Login</button>
+    </form>
+</div>
+
+</body>
+</html>

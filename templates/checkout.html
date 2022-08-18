@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/style.css') }}">
+</head>
+<body>
+<div class="header">
+    <a href="/">
+        <div class="logo">
+            <h1>FoodApp</h1>
+            <h4>Fresh & Pure</h4>
+        </div>
+    </a>
+</div>
+<div class="checkout">
+    <!--    <form method="POST" action="/payment">-->
+    <h2>Checkout</h2>
+    <h2 class="{{className}}">{{ message }}</h2>
+    <div class="cart_bg checkout_bg">
+        <form method="POST" action="/payment">
+            <h3>Billing Address:</h3>
+            <Label>{{ userdetails['name']}}, {{ userdetails['city']}} -{{ userdetails['pin']}}</Label>
+            <br>
+            <h3>Shipping Address:</h3>
+
+            <span class="error">Delivery will be done in 30 minutes.</span>
+            <br>
+            <input type="text" id="recipient_name" name="recipient_name" placeholder="Who will receive the item?"/>
+            <input type="text" id="shipping_address" name="shipping_address" placeholder="Enter delivery address?"/>
+            <input type="text" id="mobile" name="mobile" placeholder="Contact number of the person"/>
+
+            <br><br>
+            <h3>Payable Amount: <span>{{ finalcost }} ₹</span></h3>
+            <input type="text" id="card_number" name="card_number" placeholder="Enter credit/debit card number?"/>
+            <input type="text" id="expiry" name="expiry" placeholder="Enter expiry date?"/>
+            <input type="text" id="cvv" name="cvv" placeholder="Enter CVV code?"/>
+            <input type="text" id="name_on_card" name="name_on_card" placeholder="Name on the card?"/>
+
+            <input type="hidden" name="finalcost" value="{{ finalcost }}">
+            <input type="hidden" name="order_item" value="{{ order_item }}">
+            <br><br>
+            <button class="btn-group__item All">Make Payment</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

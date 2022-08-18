@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/style.css') }}">
+</head>
+<body>
+<div class="header">
+    <a href="/">
+        <div class="logo">
+            <h1>FoodApp</h1>
+            <h4>Fresh & Pure</h4>
+        </div>
+    </a>
+</div>
+
+<div class="account signup">
+    <form method="POST" action="/account_update">
+        <h2>Your profile information as per our record</h2>
+        <h3 class="{{className}}">{{ message|safe }}</h3>
+
+        <Label>Username: </Label>
+        <input type="text" maxlength="80" size="25" id="username" name="username"
+               value="{{user_info['userid']}}" disabled />
+        <br>
+        <small class="error"><b>username</b> can not be changed.</small>
+
+        <br>
+        <Label>Full Name: </Label>
+        <input type="text" maxlength="80" size="25" id="fullname" name="fullname" value="{{user_info['name']}}"/>
+
+        <br>
+        <Label>Email Id: </Label>
+        <input type="text" maxlength="80" size="25" id="email" name="email" value="{{user_info['email']}}"/>
+
+        <br>
+        <Label>Password: </Label>
+        <input type="text" maxlength="80" size="25" id="password" name="password"
+               value="{{user_info['password']}}"/>
+
+        <br>
+        <Label>City Name: </Label>
+        <input type="text" maxlength="80" size="25" id="city" name="city" value="{{user_info['city']}}"/>
+
+        <br>
+        <Label>PIN Code: </Label>
+        <input type="text" maxlength="80" size="25" id="pin" name="pin" value="{{user_info['pin']}}"/>
+
+        <br>
+        <Label>Mobile #: </Label>
+        <input type="text" maxlength="80" size="25" id="mobile" name="mobile" value="{{user_info['mobile']}}"/>
+
+        <br/><br/>
+        <button type="submit" class="btn-group__item All"> Update</button>&nbsp;
+        <a href="/account_delete" class="btn-group__item All"> Account Delete </a>
+    </form>
+</div>
+</body>
+</html>

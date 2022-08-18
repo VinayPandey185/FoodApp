@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/style.css') }}">
+</head>
+<body>
+<div class="header">
+    <a href="/">
+        <div class="logo">
+            <h1>FoodApp</h1>
+            <h4>Fresh & Pure</h4>
+        </div>
+    </a>
+</div>
+<div class="signup">
+    <form method="POST" action="/signup">
+        <h2>Please enter below details in order to register</h2>
+        <input type="text" maxlength="80" size="25" id="username" name="username" placeholder="Create a unique Username"
+               required="true"/>
+        <input type="text" maxlength="80" size="25" id="fullname" name="fullname" placeholder="Full Name"/>
+        <input type="text" maxlength="80" size="25" id="email" name="email" placeholder="Email Id"/>
+        <input type="password" maxlength="80" size="25" id="password" name="password" placeholder="Enter Password"
+               required="true"/>
+        <input type="text" maxlength="80" size="25" id="city" name="city" placeholder="City Name"/>
+        <input type="text" maxlength="80" size="25" id="pin" name="pin" placeholder="PIN Code"/>
+        <input type="text" maxlength="80" size="25" id="mobile" name="mobile" placeholder="Mobile Number"/>
+        <br/>
+        <button type="submit" class="btn-group__item All"> Register</button>
+    </form>
+    <h3 class="message">{{ message }}</h3>
+</div>
+</body>
+</html>
