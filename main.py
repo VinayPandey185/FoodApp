@@ -7,14 +7,11 @@ import json
 app = Flask(__name__)
 app.secret_key = "foodapp"
 
-client = MongoClient('localhost', 27017)
-connection = MongoClient("mongodb://localhost:27017/")
+# client = MongoClient('localhost', 27017)
+# connection = MongoClient("mongodb://localhost:27017/")
 
-MongoClient = connection.FoodMenu
-name = MongoClient.FoodMenu
+client = MongoClient("mongodb+srv://VinayPandey:Vinay185@clusterlzsy5cjj4hru2cyu.cmtwmfg.mongodb.net/?retryWrites=true&w=majority")
 print('Ready to Use...')
-
-print(client)
 
 db = client.FoodMenu
 products = db.Products
