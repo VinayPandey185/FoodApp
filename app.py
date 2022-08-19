@@ -496,4 +496,5 @@ def delete_item():
 
 
 if __name__ == "__main__":
-    app.run('localhost', debug=True)
+    # app.run('localhost', debug=True)
+    app.run(debug=False)
