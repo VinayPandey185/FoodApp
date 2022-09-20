@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'vinay-foodapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C1671B78FC941039DD385C1AA7DD498 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3BC5C3E6418443C2830EEB7A84494CF4 }}
